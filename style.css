@@ -1,0 +1,79 @@
+* {
+	box-sizing: border-box;
+	background-color: 
+}
+
+/*overall setting*/
+
+body{
+	background-color: #faf9f8;
+}
+
+/*begin - header*/
+.header-top {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	padding: 1em 0;
+	position: relative;
+}
+
+.header-top h1 {
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	letter-spacing: 2px;
+	font-weight: 500;
+	font-size: 35px;
+}
+
+.header-top a {
+	text-decoration: none;
+	color: black;
+}
+
+.header-top-right a {
+	position: absolute;
+	right: 100px;
+	font-family: 'Raleway', sans-serif;
+}
+
+@media screen and (max-width: 480px) {
+	.header-top {
+		flex-direction: column;
+	}
+}
+
+.menu {
+	display: flex;
+	justify-content: center;
+	margin-right: 3em;
+	margin-top: -0.5em;
+}
+
+.menu li {
+	list-style-type: none;
+	font-family: 'Raleway', sans-serif;
+	font-size: 12px;
+	padding: 0.4em 1.2em;
+}
+
+.menu li a {
+	text-decoration: none;
+	color: #999999;
+	transition: 0.3s;
+}
+
+.menu li a:hover {
+	color: #99563a;
+	text-shadow: 1px 1px #FFB6C1;
+}
+
+.primary-button {
+	text-decoration: none;
+	background-color: #eee;
+	padding: 1em;
+	border-radius: 10px;
+}
+
+
+
