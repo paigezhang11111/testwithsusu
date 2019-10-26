@@ -1,0 +1,118 @@
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<title></title>
+		<style>
+			*{
+				box-sizing: border-box;
+				margin:0;
+				padding:0;
+			}
+
+			.container{
+				position:relative;
+				width:60vw;
+				height: 500px;
+				margin:0 auto;
+				background:#888;
+				opacity:;
+			}
+			.container>div{
+				background-size:cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				width:100%;
+				height:500px;
+				position: absolute;
+		
+			}
+			.container>div:nth-child(1){
+				background-image: url(avenger1.jpg);
+			}
+			.container>div:nth-child(2){
+				background-image: url(avenger2.jpg);
+			}
+			.container>div:nth-child(3){
+				background-image: url(avenger3.jpg);
+			}
+
+			.container>a{
+				font-size:50pt;
+				color:white;
+				text-decoration:none;
+				position: absolute;
+				top:40%;
+				z-index:100;
+			}
+
+			#prew{
+				left:1em;
+			}
+
+			#next{
+				right:1em;
+			}
+
+			
+
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item" id="p1">
+				
+			</div>
+			<div class="item" id="p2">
+				
+			</div>
+			<div class="item" id="p3">
+				
+			</div>
+			<a href="#p2" id="prev">&lt;</a>
+
+			<a href="#p1" id="next">&gt;</a>
+		</div>
+
+	<script>
+		showPrev = function(){
+			alert("previous")
+		}
+
+		toLarge = function(){
+			//alert("ddd")
+			//$(".container>.item").animate({"opacity":"0"}, 2000)
+		}
+
+		showNext = function(){
+			for (i = 0; i < n; i++){
+				$(".container>.item").css({"left":"-100%"})
+			}
+			$(".container>.item").animate({"left":"0%"}, 2000, toLarge)
+		}
+
+		stop = function(){
+			clearInterval(myInterval);
+		}
+		restart = function(){
+			myInterval = setInterval(showNext, 3000);
+		}
+
+		setup = function(){
+			$("#prev").click(showPrev)
+			$("#next").click(showNext)
+			$(".container").mouseleave(stop);
+			$(".container").mouseenter(restart);
+			n = $(".container>.item").length
+
+			myInterval = setInterval(showNext, 3000);
+			
+		}
+
+		$(document).ready(setup);
+	</script>
+	</body>
+</html>
+
